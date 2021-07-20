@@ -1,0 +1,30 @@
+section.hero {
+    h1 {
+        font-size: 3rem;
+        color: $white;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        margin: 100px 0;
+        margin-bottom: 500px;
+        text-align: center;
+    }
+
+    span {
+        font-weight: 600;
+        background-image: -webkit-linear-gradient(145deg, #a2fe73, #35fdb2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: hue 10s infinite linear;
+    }
+}
+
+@-webkit-keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}

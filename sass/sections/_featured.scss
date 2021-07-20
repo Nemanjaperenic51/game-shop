@@ -1,0 +1,44 @@
+section.featured {
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+    text-align: center;
+    background: linear-gradient(to top, #1b1b1b 0%, #373737 100%);
+    margin-top: 170px;
+    padding-bottom: 80px;
+
+    
+    .feature-item {
+        flex: 0 0 33%;
+
+
+        img  {
+            width: 80%;
+        }
+
+        p {
+            max-width: 300px;
+            margin: 20px auto;
+        }
+        button {
+            background: $orange;
+            padding: 10px 15px;
+            color: $white;
+            font-size: 1rem;
+
+            &:hover {
+                border: 1px solid $white;
+                background: transparent;
+                transition: .3s ease;
+                
+            }
+
+        }
+
+
+    }
+    
+    
+
+   
+}
