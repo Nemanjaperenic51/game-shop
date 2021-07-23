@@ -8,11 +8,18 @@ section.products {
         margin-bottom: 70px;
         font-weight: 300;
        color: $white;
+       @media (max-width: $md) {
+           font-size: 1.3rem;
+           padding: 15px;
+       }
     }
     .container {
         display: flex;
+        flex-wrap: wrap;
 
-     
+        @media (max-width: $md) {
+            
+       }
 
         .products-item  {
             color: $white;
@@ -20,6 +27,12 @@ section.products {
             height: 710px;
             transition: .4s ease;
             position: relative;
+
+            @media (max-width: $md) {
+                background-position: center;
+                height: 510px;
+                margin-bottom: 40px;
+            }
 
             &:hover {
                 transition: .4s ease;
@@ -66,7 +79,9 @@ section.products {
                     background: $white;
                     color: $black;
                     padding: 20px 30px;
-                    
+                    @media (max-width: $md) {
+                        margin-top: 65%;
+                    }
                 }
             }
     

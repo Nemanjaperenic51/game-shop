@@ -6,14 +6,29 @@ section.featured {
     background: linear-gradient(to top, #1b1b1b 0%, #373737 100%);
     margin-top: 170px;
     padding-bottom: 80px;
+    flex-wrap: wrap;
 
-    
+    @media (max-width: $lg) {
+        padding: 0 40px 20px 40px;
+    }
+
     .feature-item {
         flex: 0 0 33%;
+
+        @media (max-width: $lg) {
+            flex: 0 0 27%;
+        }
+        @media (max-width: $md) {
+            flex: 0 0 80%;
+            margin: 60px auto;
+        }
 
 
         img  {
             width: 80%;
+            @media (max-width: $lg) {
+                width: 100%;
+            }
         }
 
         p {
@@ -30,15 +45,7 @@ section.featured {
                 border: 1px solid $white;
                 background: transparent;
                 transition: .3s ease;
-                
             }
-
         }
-
-
     }
-    
-    
-
-   
 }
