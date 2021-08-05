@@ -15,11 +15,10 @@ section.products {
     }
     .container {
         display: flex;
-        flex-wrap: wrap;
 
         @media (max-width: $md) {
-            
-       }
+            flex-wrap: wrap;
+        }
 
         .products-item  {
             color: $white;
@@ -29,7 +28,6 @@ section.products {
             position: relative;
 
             @media (max-width: $md) {
-                background-position: center;
                 height: 510px;
                 margin-bottom: 40px;
             }
@@ -43,11 +41,14 @@ section.products {
             }
 
             &.product-keyboard {
-                background: url(../img/product1.jpg);
+                background-image: url(../img/product1.jpg);
+                background-repeat: no-repeat;
             }
 
             &.product-headset {
                 background: url(../img/product2.jpg);
+                background-repeat: no-repeat;
+
             }
           
             .product-info {
@@ -80,8 +81,8 @@ section.products {
                     color: $black;
                     padding: 20px 30px;
                     @media (max-width: $md) {
-                        margin-top: 65%;
-                    }
+                        margin-top: 65% ;
+                    }     
                 }
             }
     

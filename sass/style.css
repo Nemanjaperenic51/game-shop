@@ -25,17 +25,88 @@ header .pre-header ul li a {
   text-decoration: none;
   display: flex;
 }
+header .nav-right-side {
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 20px;
+  right: 40px;
+}
+@media (max-width: 991px) {
+  header .nav-right-side {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+  }
+}
+header .nav-right-side a {
+  color: #fff;
+}
 header nav {
   padding: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  background: #000;
+  width: 100%;
+  z-index: 2;
+}
+header nav.fixed-nav {
+  position: fixed;
+  top: 0;
+}
+@media (max-width: 991px) {
+  header nav.fixed-nav {
+    position: static;
+  }
+}
+header nav .hamburger-menu-button {
+  display: none;
+  font-size: 2.3rem;
+  outline: none;
+}
+header nav .hamburger-menu-button .fa-times {
+  display: none;
+}
+header nav .hamburger-menu-button a {
+  color: #fff;
+}
+header nav .hamburger-menu-button.opened .fa-times {
+  display: block;
+}
+header nav .hamburger-menu-button.opened .fa-bars {
+  display: none;
+}
+@media (max-width: 991px) {
+  header nav .hamburger-menu-button {
+    display: block;
+  }
 }
 header nav ul {
   list-style: none;
 }
+@media (max-width: 991px) {
+  header nav ul {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: #0e0909;
+    position: fixed;
+    z-index: 2;
+    transition: 0.5s;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
 header nav ul li {
   display: inline-block;
+}
+@media (max-width: 991px) {
+  header nav ul li {
+    margin-top: 20px;
+  }
 }
 header nav ul li a {
   text-decoration: none;
@@ -46,8 +117,19 @@ header nav ul li a {
   font-family: "Roboto", sans-serif;
   position: relative;
 }
+@media (max-width: 991px) {
+  header nav ul li a {
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+}
 header nav ul li a:hover::after {
   display: block;
+}
+@media (max-width: 991px) {
+  header nav ul li a:hover::after {
+    display: none;
+  }
 }
 header nav ul li a::after {
   content: "";
@@ -58,6 +140,19 @@ header nav ul li a::after {
   position: absolute;
   bottom: 0;
 }
+header nav ul .closeMenu {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  color: whitesmoke;
+}
+@media (max-width: 991px) {
+  header nav ul .closeMenu {
+    display: block;
+  }
+}
 
 * {
   margin: 0;
@@ -67,6 +162,11 @@ header nav ul li a::after {
 
 body {
   background: #000;
+}
+
+.container {
+  max-width: 80%;
+  margin: auto;
 }
 
 section.hero h1 {
@@ -167,7 +267,11 @@ section.products h2 {
 }
 section.products .container {
   display: flex;
-  flex-wrap: wrap;
+}
+@media (max-width: 767px) {
+  section.products .container {
+    flex-wrap: wrap;
+  }
 }
 section.products .container .products-item {
   color: #fff;
@@ -178,7 +282,6 @@ section.products .container .products-item {
 }
 @media (max-width: 767px) {
   section.products .container .products-item {
-    background-position: center;
     height: 510px;
     margin-bottom: 40px;
   }
@@ -191,10 +294,12 @@ section.products .container .products-item:hover .overley {
   background: rgba(0, 0, 0, 0.3);
 }
 section.products .container .products-item.product-keyboard {
-  background: url(../img/product1.jpg);
+  background-image: url(../img/product1.jpg);
+  background-repeat: no-repeat;
 }
 section.products .container .products-item.product-headset {
   background: url(../img/product2.jpg);
+  background-repeat: no-repeat;
 }
 section.products .container .products-item .product-info {
   padding: 40px;
@@ -226,6 +331,94 @@ section.products .container .products-item .overley button {
 @media (max-width: 767px) {
   section.products .container .products-item .overley button {
     margin-top: 65%;
+  }
+}
+
+.serch-wraper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  text-align: center;
+  padding: 150px;
+}
+.serch-wraper a {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 2rem;
+}
+.serch-wraper form {
+  display: block;
+  margin: auto;
+}
+.serch-wraper form input {
+  height: 50px;
+  width: 70%;
+}
+.serch-wraper form button {
+  height: 50px;
+  width: 75px;
+  font-size: 1rem;
+}
+
+.loader-wrapper {
+  background: #000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 5;
+  padding-top: 20%;
+}
+
+.lds-facebook {
+  display: block;
+  margin: auto;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #fff;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
   }
 }
 

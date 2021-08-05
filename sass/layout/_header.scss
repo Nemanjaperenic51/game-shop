@@ -31,21 +31,95 @@ header {
             }
         }
     }
+
+    .nav-right-side {
+       
+        font-size: 2rem;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        top: 20px;
+        right: 40px;
+
+        @media(max-width: $lg) {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+        }
+        a {
+            color: $white;
+        }
+    }
+
     nav {
         padding: 15px;
         display: flex;
         flex-direction: row;
         align-items:  center;
-        // position: fixed;
-        // background: $black;
-        // top: 0;
-        // left: 0;
-        // width: 100%;
-        // z-index: 1;
+        background: $black;
+        width: 100%;
+        z-index: 2;
+      
+
+
+        &.fixed-nav {
+            position: fixed;
+            top: 0;
+            @media(max-width: $lg) {
+                position: static;
+            }
+            
+        }
+
+      .hamburger-menu-button {
+         display: none;
+          font-size: 2.3rem;
+          outline: none;
+
+          .fa-times {
+              display: none;
+          }
+          a {
+              color: $white;
+          }
+
+          &.opened {
+              .fa-times {
+                  display: block;
+              }
+
+              .fa-bars {
+                  display: none;
+              }
+          }
+
+          @media(max-width: $lg) {
+              display: block;
+          }
+      }
+
+
         ul {
             list-style: none;
+            @media(max-width: $lg) {
+              display: none;
+              width: 100%;
+              height: 100vh;
+              background-color: rgb(14, 9, 9);
+              position: fixed;
+              z-index: 2;
+              transition: .5s ;
+              flex-direction: column;
+              justify-content: center;
+             text-align: center;
+          }
             li {
                 display: inline-block;
+
+                @media (max-width: $lg) {
+                    margin-top: 20px;
+                }
+              
                 a {
                     text-decoration: none;
                     font-size: 1rem;
@@ -54,9 +128,17 @@ header {
                     margin-left: 40px;
                     font-family: $roboto;
                     position: relative;
+                    @media(max-width: $lg) {
+                        font-size: 1.2rem;
+                        margin-left: 0;
+                    }
                     &:hover {
                         &::after {
                             display: block;
+                            @media(max-width: $lg) {
+                                display: none;
+                                
+                            }
                         }
                         
                     }
@@ -69,8 +151,23 @@ header {
                         width: 100%;
                         position: absolute;
                         bottom: 0;
+                      
                     }
                 }
+            }
+
+            .closeMenu {
+                display: none;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                font-size: 2rem;
+                color: whitesmoke;
+            
+
+                 @media (max-width: $lg) {
+                     display: block;
+                 }
             }
         }
     }
