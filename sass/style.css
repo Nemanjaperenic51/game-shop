@@ -345,7 +345,7 @@ section.products .container .products-item .overley button {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 3;
   text-align: center;
-  padding: 150px;
+  padding: 300px;
 }
 .serch-wraper a {
   position: absolute;
@@ -357,15 +357,28 @@ section.products .container .products-item .overley button {
 .serch-wraper form {
   display: block;
   margin: auto;
+  max-width: 700px;
 }
 .serch-wraper form input {
   height: 50px;
   width: 70%;
+  background: transparent;
+  border: none;
+  border-bottom-color: currentcolor;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  outline: none;
+  color: #fff;
+  font-size: 1.3rem;
+  padding-left: 20px;
 }
-.serch-wraper form button {
-  height: 50px;
-  width: 75px;
-  font-size: 1rem;
+.serch-wraper form .btn1 {
+  font-size: 2rem;
+  color: #fff;
+  position: static;
+  cursor: pointer;
+  margin-left: -45px;
 }
 
 .loader-wrapper {

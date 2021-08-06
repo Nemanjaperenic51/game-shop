@@ -9,7 +9,7 @@
     background-color: rgba(0,0,0,.7);
     z-index: 3;
     text-align: center;
-    padding: 150px;
+    padding: 300px;
 
     a {
         position: absolute;
@@ -22,15 +22,29 @@
     form {
         display: block;
         margin: auto;
+        max-width: 700px;
         input {
             height: 50px;
             width: 70%;
+            background: transparent;
+            border: none;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: medium;
+            border-bottom: 2px solid rgba(255,255,255,.5);
+            outline: none;
+            color: #fff;
+            font-size: 1.3rem;
+            padding-left: 20px;
         }
 
-        button {
-            height: 50px;
-            width: 75px;
-            font-size: 1rem;
+        .btn1 {
+            font-size: 2rem;
+            color: $white;
+             position: static;
+             cursor: pointer;
+             margin-left: -45px;
+         
         }
     }
 }
